@@ -18,6 +18,9 @@ Page {
     anchors.margins: contentPadding //In Mainpage gesetzt
     spacing: contentPadding
 
+    /**
+      Erklärungstext für App
+      */
     AppText {
       width: parent.width
       font.pixelSize: sp(12)
@@ -27,7 +30,9 @@ Page {
       wrapMode: Text.WrapAtWordBoundaryOrAnywhere
     }
 
-
+    /**
+      Label für Würfelergebnis-Eingabe
+      */
     AppText {
       width: parent.width
       wrapMode: Text.WrapAtWordBoundaryOrAnywhere
@@ -36,8 +41,11 @@ Page {
     }
 
 
+    /**
+      Eingabefeld für das Würfelergebnis
+      */
     AppTextField {
-      id: searchInput
+      id: diceInput
       width: parent.width
       borderColor: '#000000'
       validator: IntValidator {bottom: 1; top: 100;}
@@ -45,9 +53,12 @@ Page {
       showClearButton: true
       placeholderText: qsTr("W100")
       inputMethodHints: Qt.ImhNoPredictiveText
-      onEditingFinished: logic.setDiceResult(searchInput.text)
+      onEditingFinished: logic.setDiceResult(diceInput.text)
     }
 
+    /**
+      Checkboxen für Art des kritischen Ereignisses
+      */
     Quick2.RadioButton{
         checked: true
         text: qsTr("Kritischer Fehler beim Angriff")
@@ -67,6 +78,36 @@ Page {
         text: qsTr("Kritischer Erfolg bei der Abwehr")
     }
 
+  }
+
+  /**
+    Suchergebnisse für Orte in ListView: Model wird als JsonListModel ausgewertet
+    */
+  AppListView {
+    id: listView
+    width: parent.width
+    anchors.top: contentCol.bottom
+    anchors.bottom: parent.bottom
+
+    visible: true
+
+    // Show either the recents searches or the currently found locations depending on search mode
+    model: JsonListModel {
+      source: dataModel.results
+      keyField: "wert"
+      fields: [ "wert", "ueber", "text" ]
+    }
+
+    // Show a section header for listings
+    section.property: "wert"
+    section.delegate: SimpleSection { }
+
+    //Holt das Model aus der Listview für das Item->delegate verwenden!
+    delegate: SimpleRow {
+      item: listView.model.get(index)
+    }
+
+    emptyText.text: qsTr("Nix eingegeben.")
   }
 }
 
