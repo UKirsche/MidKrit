@@ -2,6 +2,7 @@ import QtQuick 2.5
 import Felgo 3.0
 import QtQuick.Controls 2.0 as Quick2
 
+
 Page {
   title: qsTr("Midgard-Kritter")
   id: kritPage
@@ -23,7 +24,6 @@ Page {
       */
     AppText {
       width: parent.width
-      font.pixelSize: sp(12)
       color: Theme.secondaryTextColor
       font.italic: true
       text: "Zeigt die kritischen Kampf-Ergebnisse der Tabellen ab Seite 88 nach Midgard 5 an. "
@@ -35,8 +35,8 @@ Page {
       */
     AppText {
       width: parent.width
+      font.bold:true
       wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-      font.pixelSize: sp(12)
       text: qsTr("Würfelergebnis eingeben:")
     }
 
@@ -47,7 +47,9 @@ Page {
     AppTextField {
       id: diceInput
       width: parent.width
+      font.pixelSize: sp(20)
       borderColor: '#000000'
+      backgroundColor: "#F3F4F6"
       validator: IntValidator {bottom: 1; top: 100;}
       focus: true
       showClearButton: true
@@ -76,6 +78,7 @@ Page {
     }
     Quick2.RadioButton{
         text: qsTr("Kritischer Erfolg bei der Abwehr")
+        onClicked: logic.setKritType(3)
     }
 
   }
@@ -92,20 +95,40 @@ Page {
     visible: true
 
     // Show either the recents searches or the currently found locations depending on search mode
-    model: JsonListModel {
-      source: dataModel.results
-      keyField: "wert"
-      fields: [ "wert", "ueber", "text" ]
-    }
-
-    // Show a section header for listings
-    section.property: "wert"
-    section.delegate: SimpleSection { }
+    model: dataModel.results
 
     //Holt das Model aus der Listview für das Item->delegate verwenden!
-    delegate: SimpleRow {
-      item: listView.model.get(index)
+    delegate: Component {
+      Column{
+          anchors.left: parent.left
+          anchors.top: parent.top
+          anchors.right: parent.right
+          anchors.margins: dp(30) //In Mainpage gesetzt
+          spacing: contentPadding
+
+          AppText {
+            text: qsTr("\nResultat für Bereich: "+modelData.wert)
+            width: parent.width
+            font.pixelSize: sp(14)
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+          }
+
+          AppText {
+            text: qsTr(modelData.ueber)
+            width: parent.width
+            font.pixelSize: sp(12)
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            font.italic: true
+          }
+
+          AppText {
+            text: modelData.text
+            width: parent.width
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+          }
+      }
     }
+
 
     emptyText.text: qsTr("Nix eingegeben.")
   }
