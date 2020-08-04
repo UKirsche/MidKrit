@@ -60,8 +60,11 @@ macx {
 }
 
 DISTFILES += \
-    qml/komponenten/KomponenteKritisch.qml \
+    qml/MidKritMainItem.qml \
     qml/model/DataModelFertigkeiten.qml \
     qml/model/DataModelKrit.qml \
     qml/model/LogicKrit.qml \
-    qml/pages/PageKritWrapper.qml
+    qml/pages/FertigkeitenList.qml \
+    qml/pages/Hauptnavigation.qml \
+    qml/pages/KampfBoni.qml \
+    qml/pages/ZauberList.qml

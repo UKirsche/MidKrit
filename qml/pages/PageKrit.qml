@@ -4,7 +4,7 @@ import QtQuick.Controls 2.0 as Quick2
 
 
 Page {
-  title: qsTr("Midgard-Kritter")
+
   id: kritPage
 
   Quick2.ButtonGroup {
