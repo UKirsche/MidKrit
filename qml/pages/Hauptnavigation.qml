@@ -24,15 +24,9 @@ Page {
         navigationMode: navigationModeTabs
 
         NavigationItem {
-          title: qsTr("Kritisch")
-          icon: IconType.clocko
-          PageKrit {}
-        }
-
-        NavigationItem {
           id: fertigkeitenList
           title: qsTr("Fertigkeiten")
-          icon: IconType.arrowsalt
+          icon: IconType.barcharto
           FertigkeitenList {}
         }
 
@@ -46,8 +40,14 @@ Page {
         NavigationItem {
           id: kampfBoni
           title: qsTr("Kampfboni")
-          icon: IconType.fighterjet
+          icon: IconType.dashboard
           KampfBoni {}
+        }
+
+        NavigationItem {
+          title: qsTr("Kritisch")
+          icon: IconType.bolt
+          PageKrit {}
         }
       }
     }
