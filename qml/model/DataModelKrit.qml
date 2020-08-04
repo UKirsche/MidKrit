@@ -340,7 +340,7 @@ Item {
         zurück
         */
       function getFilteredResults(){
-        switch (dataModel.kritDice){
+        switch (dataModelKrit.kritDice){
             case DataModel.KritType.FehlerAngriff:
                 return filterKategorie(basicKritFehlerAngriff)
             case DataModel.KritType.ErfolgAngriff:
@@ -364,7 +364,7 @@ Item {
              try {
                var min = katJson.min;
                var max = katJson.max;
-               return dataModel.diceThrow>= min && dataModel.diceThrow<=max
+               return dataModelKrit.diceThrow>= min && dataModelKrit.diceThrow<=max
              } catch(ex) {
                console.error("Could not parse server response as JSON:", ex)
                return

@@ -55,7 +55,7 @@ Page {
       showClearButton: true
       placeholderText: qsTr("W100")
       inputMethodHints: Qt.ImhNoPredictiveText
-      onEditingFinished: logic.setDiceResult(diceInput.text)
+      onEditingFinished: logicKrit.setDiceResult(diceInput.text)
     }
 
     /**
@@ -64,27 +64,27 @@ Page {
     Quick2.RadioButton{
         checked: true
         text: qsTr("Kritischer Fehler beim Angriff")
-        onClicked: logic.setKritType(0)
+        onClicked: logicKrit.setKritType(0)
     }
     Quick2.RadioButton{
         text: qsTr("Kritischer Schaden")
-        onClicked: logic.setKritType(1)
+        onClicked: logicKrit.setKritType(1)
 
     }
     Quick2.RadioButton{
         text: qsTr("Kritischer Fehler bei der Abwehr")
-        onClicked: logic.setKritType(2)
+        onClicked: logicKrit.setKritType(2)
 
     }
     Quick2.RadioButton{
         text: qsTr("Kritischer Erfolg bei der Abwehr")
-        onClicked: logic.setKritType(3)
+        onClicked: logicKrit.setKritType(3)
     }
 
   }
 
   /**
-    Suchergebnisse für Orte in ListView: Model wird als JsonListModel ausgewertet
+    Suchergebnisse für Kritische Typen in der ListView
     */
   AppListView {
     id: listView
@@ -95,9 +95,9 @@ Page {
     visible: true
 
     // Show either the recents searches or the currently found locations depending on search mode
-    model: dataModel.results
+    model: dataModelKrit.results
 
-    //Holt das Model aus der Listview für das Item->delegate verwenden!
+    //Holt das Model aus der Listview und delegiert die einzelen Feldelemente weiter an die Column
     delegate: Component {
       Column{
           anchors.left: parent.left
@@ -129,7 +129,7 @@ Page {
       }
     }
 
-
+    //Setzt den Leertext für die Listview
     emptyText.text: qsTr("Nix eingegeben.")
   }
 }

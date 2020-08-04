@@ -60,6 +60,8 @@ macx {
 }
 
 DISTFILES += \
-    qml/model/DataModel.qml \
-    qml/model/Logic.qml \
-    qml/pages/KritPageWrapper.qml
+    qml/komponenten/KomponenteKritisch.qml \
+    qml/model/DataModelFertigkeiten.qml \
+    qml/model/DataModelKrit.qml \
+    qml/model/LogicKrit.qml \
+    qml/pages/PageKritWrapper.qml
