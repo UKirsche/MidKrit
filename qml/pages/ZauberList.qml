@@ -37,7 +37,7 @@ ListPage {
         { type: "Zauberlied", text: "Das Lied der Feier" },
         { type: "Zauberlied", text: "Das Lied der Liebe" },
         { type: "Zauberlied", text: "Das Lied der Lockung" },
-            { type: "Zauberlied", text: "Das Lied der Ruhe" },
+        { type: "Zauberlied", text: "Das Lied der Ruhe" },
         { type: "Zauberlied", text: "Das Lied der Tapferkeit" },
         { type: "Zauberlied", text: "Das Lied der Feier" },
         { type: "Zauberlied", text: "Das Lied der Feier" },
