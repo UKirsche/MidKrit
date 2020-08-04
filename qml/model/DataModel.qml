@@ -6,8 +6,9 @@ import Felgo 3.0
   */
 Item {
 
-    // property to configure target dispatcher / logic
-    property alias dispatcher: logicConnection.target
+    // property to configure target dispatcher
+    // Wert für Alias (Connections.target) ist Logic.qml
+    property alias dispatcher:logicConnection.target
 
     //Holt das zuletzt gesuchte Model zurück
     //also: KritFehlerAngriff,KritSchadenAngriff,KritFehlerAbwehr oder KritErfolgAbwehr
