@@ -61,9 +61,9 @@ macx {
 
 DISTFILES += \
     qml/MidKritMainItem.qml \
-    qml/model/DataModelFertigkeiten.qml \
-    qml/model/DataModelKrit.qml \
-    qml/model/LogicKrit.qml \
+    qml/model/DataModel.qml \
+    qml/model/Logic.qml \
+    qml/pages/FertigkeitenDetail.qml \
     qml/pages/FertigkeitenList.qml \
     qml/pages/Hauptnavigation.qml \
     qml/pages/KampfBoni.qml \

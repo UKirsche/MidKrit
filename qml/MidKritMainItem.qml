@@ -14,12 +14,12 @@ import "model"
 Item {
   anchors.fill: parent
 
-  DataModelKrit {
+  DataModel {
     id: dataModelKrit
     dispatcher: logicKrit
   }
 
-  LogicKrit {
+  Logic{
     id: logicKrit
   }
 
