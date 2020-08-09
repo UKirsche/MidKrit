@@ -15,57 +15,86 @@ Page {
         anchors.top: parent.top
         anchors.right: parent.right
         anchors.margins: contentPadding //In Mainpage gesetzt
-        spacing: contentPadding
+        spacing: dp(2)
+
+        /**
+          Name
+          */
         Row{
-            /**
-              Erklärungstext für App
-              */
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
+              fontSize: sp(18)
               text: "Name: "
             }
-            /**
-              Erklärungstext für App
-              */
             AppText {
               text: modelZauber.text
+              fontSize: sp(18)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
+
+        /**
+          Art: Gedanke, Wort, Geste
+          */
         Row{
             AppText {
               text: modelZauber.art
               font.italic: true
+              fontSize: sp(10)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
+
+        /**
+          Prozess: Agens -> Reagens
+          */
         Row{
             AppText {
               text: modelZauber.agens
+              fontSize: sp(10)
               font.italic: true
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
-        Row{
 
+        /**
+          Linie
+          */
+        Row{
+           LineItem {
+                  points: [
+                    {"x": 0, "y": 0},
+                    {"x": contentCol.width/2, "y": 0}
+                  ]
+           }
+        }
+
+        /**
+          AP-Kosten
+          */
+        Row{
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
+              fontSize: sp(12)
               text: "AP-Verbrauch: "
             }
-            /**
-              Erklärungstext für App
-              */
             AppText {
               text: modelZauber.ap
+              fontSize: sp(12)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
+
+        /**
+          Zauberdauer
+          */
         Row{
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
+              fontSize: sp(12)
               text: "Zauberdauer: "
             }
             /**
@@ -73,21 +102,95 @@ Page {
               */
             AppText {
               text: modelZauber.zd
-              wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            }
-        }
-        Row{
-            AppText {
-              color: Theme.secondaryTextColor
-              font.italic: true
-              text: "Reichweite: "
-            }
-            AppText {
-              text: modelZauber.reichweite
+              fontSize: sp(12)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
 
+        /**
+          Reichweite
+          */
+        Row{
+            AppText {
+              color: Theme.secondaryTextColor
+              font.italic: true
+              fontSize: sp(12)
+              text: "Reichweite: "
+            }
+            AppText {
+              text: modelZauber.reichweite
+              fontSize: sp(12)
+              wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            }
+        }
+
+        /**
+          Wirkungsziel
+          */
+        Row{
+            AppText {
+              color: Theme.secondaryTextColor
+              font.italic: true
+              fontSize: sp(12)
+              text: "Wirkungsziel: "
+            }
+            AppText {
+              text: modelZauber.ziel
+              fontSize: sp(12)
+              wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            }
+        }
+
+        /**
+          Wirkungsbereich
+          */
+        Row{
+            AppText {
+              color: Theme.secondaryTextColor
+              font.italic: true
+              fontSize: sp(12)
+              text: "Wirkungsbereich: "
+            }
+            AppText {
+              text: modelZauber.bereich
+              fontSize: sp(12)
+              wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            }
+        }
+
+        /**
+          Wirkungsdauer
+          */
+        Row{
+            AppText {
+              color: Theme.secondaryTextColor
+              font.italic: true
+              fontSize: sp(12)
+              text: "Wirkungsdauer: "
+            }
+            AppText {
+              text: modelZauber.dauer
+              fontSize: sp(12)
+              wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            }
+        }
+
+        /**
+          Ursprung
+          */
+        Row{
+            AppText {
+              color: Theme.secondaryTextColor
+              font.italic: true
+              fontSize: sp(12)
+              text: "Ursprung: "
+            }
+            AppText {
+              text: modelZauber.ursprung
+              fontSize: sp(12)
+              wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            }
+        }
      }
 
     AppListView {
