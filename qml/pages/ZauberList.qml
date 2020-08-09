@@ -5,6 +5,24 @@ import Felgo 3.0
 ListPage {
     id:listPageZauber
     section.property: "type"
+    // Use a predefined delegate but change some of its layout parameters
+    delegate: SimpleRow {
+      onSelected: {
+        navStack.popAllExceptFirstAndPush(zauberDetailPage, {
+                                       modelZauber:item
+                                     })
+      }
+    }
+
+    Component { id: zauberDetailPage;  ZauberDetail { } }
+
+    SectionSelect {
+      id: sectionSelect
+      anchors.right: parent.right
+      target: listPageZauber.listView
+      sectionProperty: "gruppe"
+    }
+
     model: [
         { type: "Zauber", gruppe:"A", art: "Wortzauber der Stufe 2", agens:"Beherrschen: Feuer•Wasser", ap:"2 je Wesen", zd:"Augenblick", reichweite:"30 m", ziel:"Geist", bereich:"bis zu 10 Wesen", dauer:"10 min", ursprung:"druidisch", text: "Angst", beschreibung:"Der Zauberer erscheint durch diesen Spruch dominant und furchteinflößend. Er schüchtert das Opfer ein, dessen animalische Instinkte es zu besonderer Vorsicht und Zurückhaltung
  zwingen. Es läuft nicht weg, sondern verharrt unsicher auf der Stelle, bleibt aber inaktiv und greift von sich aus nicht an. Befindet sich der einschüchternde Zauberer mehr als 1 min lang nicht im Blickfeld des Opfers, endet die Wirkung vorzeitig. Wesen, die einen höheren Grad als 10 haben, lassen sich nicht so leicht beeindrucken und sind immun gegen den Zauber Angst.\n
@@ -86,12 +104,12 @@ Die Zauberdauer hängt vom schwersten der an der Umwandlung beteiligten Elemente
 Zombie (Grad 2)
 9 LP, ∞ AP - TR - St 90, Gw 30, In t20, B 18\n
 Angriff: Klaue+5 (1W6+1) oder Waffe+5 (+2 auf Schaden), Raufen+6 (1W6–2) - A􏰃􏰄􏰅􏰆􏰁+12, R􏰅􏰇􏰈􏰇􏰉􏰅􏰊􏰋+11/13"},
-        { type: "Zauber",gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenfeuer" , beschreibung:""},
-        { type: "Zauber",gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenfeuer" , beschreibung:""},
-        { type: "Zauber",gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenfeuer" , beschreibung:""},
-        { type: "Zauber",gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenfeuer" , beschreibung:""},
-        { type: "Zauber",gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenfeuer" , beschreibung:""},
-        { type: "Zauber",gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenklinge", beschreibung:"" }
+        { type: "Zauber", gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenfeuer" , beschreibung:""},
+        { type: "Zauber", gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenfeuer" , beschreibung:""},
+        { type: "Zauber", gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenfeuer" , beschreibung:""},
+        { type: "Zauber", gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenfeuer" , beschreibung:""},
+        { type: "Zauber", gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenfeuer" , beschreibung:""},
+        { type: "Zauber", gruppe: "", art: "", agens:"", ap:"", zd:"", reichweite:"", ziel:"", bereich:"", dauer:"", ursprung:"", text: "Elfenklinge", beschreibung:"" }
 
     ]
 

@@ -67,4 +67,5 @@ DISTFILES += \
     qml/pages/FertigkeitenList.qml \
     qml/pages/Hauptnavigation.qml \
     qml/pages/KampfBoni.qml \
+    qml/pages/ZauberDetail.qml \
     qml/pages/ZauberList.qml
