@@ -24,12 +24,10 @@ Page {
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
-              fontSize: sp(18)
               text: "Name: "
             }
             AppText {
               text: modelZauber.text
-              fontSize: sp(18)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
@@ -77,12 +75,10 @@ Page {
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
-              fontSize: sp(12)
               text: "AP-Verbrauch: "
             }
             AppText {
               text: modelZauber.ap
-              fontSize: sp(12)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
@@ -94,7 +90,6 @@ Page {
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
-              fontSize: sp(12)
               text: "Zauberdauer: "
             }
             /**
@@ -102,7 +97,6 @@ Page {
               */
             AppText {
               text: modelZauber.zd
-              fontSize: sp(12)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
@@ -114,12 +108,10 @@ Page {
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
-              fontSize: sp(12)
               text: "Reichweite: "
             }
             AppText {
               text: modelZauber.reichweite
-              fontSize: sp(12)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
@@ -131,12 +123,10 @@ Page {
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
-              fontSize: sp(12)
               text: "Wirkungsziel: "
             }
             AppText {
               text: modelZauber.ziel
-              fontSize: sp(12)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
@@ -148,12 +138,10 @@ Page {
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
-              fontSize: sp(12)
               text: "Wirkungsbereich: "
             }
             AppText {
               text: modelZauber.bereich
-              fontSize: sp(12)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
@@ -165,12 +153,10 @@ Page {
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
-              fontSize: sp(12)
               text: "Wirkungsdauer: "
             }
             AppText {
               text: modelZauber.dauer
-              fontSize: sp(12)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
@@ -182,12 +168,10 @@ Page {
             AppText {
               color: Theme.secondaryTextColor
               font.italic: true
-              fontSize: sp(12)
               text: "Ursprung: "
             }
             AppText {
               text: modelZauber.ursprung
-              fontSize: sp(12)
               wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
         }
