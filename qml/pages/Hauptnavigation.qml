@@ -38,6 +38,13 @@ Page {
         }
 
         NavigationItem {
+          id: preisList
+          title: qsTr("Preise")
+          icon: IconType.money
+          PreisList {}
+        }
+
+        NavigationItem {
           id: kampfBoni
           title: qsTr("Kampfboni")
           icon: IconType.dashboard
